@@ -49,5 +49,11 @@ public class Pokemon0 {
 	public void log(String msg) {
 		System.out.println("msg");
 	}
+	
+	//Petite permutation
+	int j = 22;
+	int x = 52;
+	int tmp = x;
+	
 
 }
