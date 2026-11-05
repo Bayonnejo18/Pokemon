@@ -3,13 +3,15 @@ import java.util.Random;
 public class Pokemon0 {
 	private String nom;
 	private int niveau;
-	private int hp = 2*niveau;
-	private int atk = (niveau /2) + 1;
+	protected int hp;
+	private int atk; 
 	
 	public Pokemon0 (String nom) {
 		this.nom = nom;
 		Random random = new Random();
 		this.niveau = random.nextInt(1, 11);
+		this.hp = 2*niveau;
+		this.atk = (niveau /2) + 1;
 	}
 
 	public String getNom() {
@@ -37,23 +39,23 @@ public class Pokemon0 {
 	}
 	
 	public void attaquer(Pokemon0 p) {
-		System.out.println("J'attaque "+ p.nom);
+		System.out.println(prefixe() + "J'attaque "+ p.nom);
 		p.hp -= this.atk;
 	}
 
 	@Override
 	public String toString() {
-		return "Pokemon0 [nom=" + nom + ", niveau=" + niveau + ", hp=" + hp + ", atk=" + atk + "]";
+		return "Je m'appelle " + nom + 
+				"\n \t je suis de niveau " + niveau + "\n \t j'ai " + hp + 
+				" points de vie \n \t mon attaque de base est de " + atk ;
+	}
+	
+	private String prefixe() {
+		return "[Pokemon " + nom + "] : ";
 	}
 	
 	public void log(String msg) {
-		System.out.println("msg");
+		System.out.println(prefixe()+ msg);
 	}
 	
-	//Petite permutation
-	int j = 22;
-	int x = 52;
-	int tmp = x;
-	
-
 }
